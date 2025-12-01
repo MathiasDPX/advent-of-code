@@ -4,7 +4,9 @@ with open("input.txt", "r") as f:
     lines = f.readlines()
 
 idx = 50
-solution = 0
+
+solution1 = 0
+solution2 = 0
 
 for line in lines:
     move = line[1:].strip()
@@ -21,6 +23,10 @@ for line in lines:
         idx = idx % 100
 
         if idx == 0:
-            solution += 1
+            solution2 += 1
+    
+    if idx == 0:
+            solution1 += 1
 
-print(f"Solution: {solution}")
+print(f"Solution part 1: {solution1}")
+print(f"Solution part 2: {solution2}")
