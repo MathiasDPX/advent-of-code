@@ -2,16 +2,12 @@ lines = []
 
 def has_repetition(s) -> bool:
     s = str(s)
-    n = len(s)
+    i = (s+s).find(s, 1, -1)
+    
+    if i >= 1:
+        return True
 
-    if n % 2 != 0:
-        return False
-
-    half = n // 2
-    left = s[:half]
-    right = s[half:]
-
-    return left == right
+    return False
 
 
 with open("input.txt", "r") as f:
