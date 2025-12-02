@@ -25,7 +25,6 @@ for line in lines:
     for i in range(int(a), int(b) + 1):
 
         if has_repetition(i):
-            print(f"{a}-{b}: {i} repeat")
             solution += i
 
 print(solution)
