@@ -6,13 +6,12 @@ digits = 12 # 2 for first part
 result = 0
 
 for line in lines:
-    k = 12
     length = len(line)
     selected = []
     start = 0
     
-    for i in range(k):
-        end = length - (k - 1 - i)
+    for i in range(digits):
+        end = length - (digits - 1 - i)
         best_idx = start
         
         for j in range(start, end):
