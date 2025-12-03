@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -51,4 +52,5 @@ func main() {
 
 	fmt.Printf("Solution for part 1: %d\n", solution1)
 	fmt.Printf("Solution for part 2: %d\n", solution2)
+	os.Exit(0)
 }

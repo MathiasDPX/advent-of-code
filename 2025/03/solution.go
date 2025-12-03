@@ -57,4 +57,5 @@ func main() {
 	}
 
 	fmt.Println("Solution:", result)
+	os.Exit(0)
 }
