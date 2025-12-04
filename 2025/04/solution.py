@@ -63,10 +63,13 @@ solution = 0
 subsolution = None
 
 while subsolution != 0:
-    mymap, subsolution = clean_map(mymap)    
+    mymap, subsolution = clean_map(mymap)
     solution += subsolution
-    
-    print(f"Removed {subsolution} rolls")
-    #displayMap(mymap)
 
-print(f"Solution: {solution}")
+    if subsolution == solution:
+        print(f"Solution part 1: {solution}")
+
+    # print(f"Removed {subsolution} rolls")
+    # displayMap(mymap)
+
+print(f"Solution part 2: {solution}")
