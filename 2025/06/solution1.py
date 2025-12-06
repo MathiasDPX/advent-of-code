@@ -24,4 +24,4 @@ for i, operation in operations.items():
     elif operator == "+":
         solution += sum(operants)
     
-print(f"Solution: {solution}")
+print(f"Solution part 1: {solution}")

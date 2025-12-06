@@ -7,7 +7,7 @@
 | 03 | [Python](/2025/03/solution.py) [Golang](/2025/03/solution.go) |
 | 04 | [Python](/2025/04/solution.py) |
 | 05 | [Python](/2025/05/solution.py) |
-| 06 | soon |
+| 06 | Python [1](/2025/02/solution1.py) [2](/2025/02/solution2.py) |
 | 07 | soon |
 | 08 | soon |
 | 09 | soon |
