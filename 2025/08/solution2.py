@@ -1,22 +1,25 @@
 import math
 import itertools
-import heapq
 
 data = open("input.txt", "r").read().splitlines()
 
 
 class DSU:
+    # disjoint set union
+
     def __init__(self, n):
         self.parent = list(range(n))
         self.size = [1] * n
 
     def find(self, x):
+        # find parent of element x
         while x != self.parent[x]:
             self.parent[x] = self.parent[self.parent[x]]
             x = self.parent[x]
         return x
 
     def union(self, a, b):
+        # union two circuits
         ra, rb = self.find(a), self.find(b)
         if ra == rb:
             return False
@@ -31,18 +34,23 @@ points = [tuple(map(int, line.split(","))) for line in data]
 
 
 def edge_iter():
+    # yield all possible edges as (distance, point_a, point_b)
     for i, j in itertools.combinations(range(len(points)), 2):
         yield (math.dist(points[i], points[j]), i, j)
 
 
-edges = heapq.nsmallest(1000, edge_iter(), key=lambda x: x[0])
+edges = list(edge_iter())
+edges.sort()
 
+# process edges in order of increasing distance
 dsu = DSU(len(points))
 connections = 0
+last_a, last_b = None, None
 for _, a, b in edges:
     if dsu.union(a, b):
         connections += 1
-        if connections == 1000:
+        last_a, last_b = a, b
+        if connections == len(points) - 1:
             break
 
 component_sizes = []
@@ -50,6 +58,4 @@ for i in range(len(points)):
     if dsu.find(i) == i:
         component_sizes.append(dsu.size[i])
 
-component_sizes.sort(reverse=True)
-top3 = (component_sizes + [1, 1, 1])[:3]
-print(top3[0] * top3[1] * top3[2])
+print("Solution part 2:", points[last_a][0] * points[last_b][0])
