@@ -65,7 +65,7 @@ def timeit(func):
 
 
 duration, solution = timeit(part1)
-print(f"Solution part 1: {solution} in {duration:.2f}ms")
+print(f"Solution part 1: {solution} in {duration * 1000:.2f}ms")
 
 duration, solution = timeit(part2)
-print(f"Solution part 2: {solution} in {duration:.2f}ms")
+print(f"Solution part 2: {solution} in {duration * 1000:.2f}ms")
