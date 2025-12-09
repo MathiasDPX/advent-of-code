@@ -2,6 +2,7 @@ from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
 from shapely.geometry import box
 import itertools
+import time
 
 data = open("input.txt", "r").read().splitlines()
 
@@ -28,7 +29,7 @@ def part1():
 
         maxarea = max(maxarea, area)
 
-    print(f"Solution part 1: {maxarea}")
+    return maxarea
 
 
 def part2():
@@ -45,15 +46,26 @@ def part2():
         rect = box(minx, miny, maxx, maxy)
         if not polygon.covers(rect):
             continue
-        
+
         width = maxx - minx + 1
         height = maxy - miny + 1
         area = width * height
 
         maxarea = max(maxarea, area)
 
-    print(f"Solution part 2: {maxarea}")
+    return maxarea
 
 
-part1()
-part2()
+def timeit(func):
+    start = time.time()
+    solution = func()
+    end = time.time()
+
+    return (end - start, solution)
+
+
+duration, solution = timeit(part1)
+print(f"Solution part 1: {solution} in {duration:.2f}ms")
+
+duration, solution = timeit(part2)
+print(f"Solution part 2: {solution} in {duration:.2f}ms")
