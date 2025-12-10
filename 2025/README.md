@@ -11,6 +11,6 @@
 | 07 | [Python](/2025/07/solution.py) |
 | 08 | [Python](/2025/08/solution.py) |
 | 09 | [Python](/2025/09/solution.py) |
-| 10 | soon |
+| 10 | [Python](/2025/10/solution.py) |
 | 11 | soon |
 | 12 | soon |
