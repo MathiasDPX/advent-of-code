@@ -20,9 +20,6 @@ class LightMachine:
             matrix = [1 if i in keys else 0 for i in range(size)]
             self.buttons.append(matrix)
 
-    def check(self):
-        return self.lights == self.target_lights
-
 
 class JoltageMachine:
     def __init__(self, line):
@@ -35,9 +32,6 @@ class JoltageMachine:
             keys = [int(key) for key in keys_str.split(",")]
             matrix = [1 if i in keys else 0 for i in range(size)]
             self.buttons.append(matrix)
-
-    def check(self):
-        return self.joltage == self.target_joltage
 
 
 lightmachines: list[LightMachine] = []
