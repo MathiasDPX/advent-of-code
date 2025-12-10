@@ -109,6 +109,16 @@ def part2():
 
     return solution
 
+import time
+def timeit(func):
+    start = time.time()
+    solution = func()
+    end = time.time()
 
-print(f"Solution part 1: {part1()}")
-print(f"Solution part 2: {part2()}")
+    return (end - start, solution)
+
+duration, result = timeit(part1)
+print(f"Solution part 1: {result} found in {duration:.2f}s")
+
+duration, result = timeit(part2)
+print(f"Solution part 2: {result} found in {duration:.2f}s")
