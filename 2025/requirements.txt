@@ -1,0 +1,5 @@
+# Day 09
+shapely
+
+# Day 10
+z3-solver

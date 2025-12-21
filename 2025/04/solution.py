@@ -1,8 +1,13 @@
 from collections import defaultdict
+from copy import deepcopy
 
 lines = open("input.txt", "r").read().splitlines()
-
 mymap = defaultdict(list)
+
+
+for i in range(len(lines)):
+    for char in lines[i]:
+        mymap[i].append(char == "@")
 
 
 def hasCharAt(x, y, map=mymap) -> bool:
@@ -11,11 +16,6 @@ def hasCharAt(x, y, map=mymap) -> bool:
         return False
 
     return map[y][x]
-
-
-for i in range(len(lines)):
-    for char in lines[i]:
-        mymap[i].append(char == "@")
 
 
 def getNeighbors(x, y, map=mymap):
@@ -59,26 +59,25 @@ def displayMap(map):
         print("")
 
 
-def part1(mymap):
-    _, solution = clean_map(mymap)
+def part1():
+    map = deepcopy(mymap)
+    _, solution = clean_map(map)
 
     return solution
 
 
-def part2(mymap):
+def part2():
+    map = deepcopy(mymap)
     solution = 0
     subsolution = None
 
     while subsolution != 0:
-        mymap, subsolution = clean_map(mymap)
+        map, subsolution = clean_map(map)
         solution += subsolution
 
     return solution
 
 
 if __name__ == "__main__":
-    from copy import deepcopy
-
-    print(f"Solution part 1: {part1(deepcopy(mymap))}")
-
-    print(f"Solution part 2: {part2(deepcopy(mymap))}")
+    print(f"Solution part 1: {part1()}")
+    print(f"Solution part 2: {part2()}")

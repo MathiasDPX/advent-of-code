@@ -6,10 +6,9 @@ for i in range(len(data)):
     data[i] = list(data[i])
 
 
-def compute_classical(data):
-    data = deepcopy(data)
+def part1():
     splitcount = 0
-    map = data
+    map = deepcopy(data)
     for i in range(len(map)):
         for j in range(len(map[i])):
             char = map[i][j]
@@ -34,9 +33,8 @@ def compute_classical(data):
     return splitcount
 
 
-def compute_quantum(data):
-    data = deepcopy(data)
-    map = data
+def part2():
+    map = deepcopy(data)
     
     def compute_split(x, y):
         if type(map[y][x]) == str:
@@ -72,17 +70,5 @@ def compute_quantum(data):
     return timelines
 
 if __name__ == "__main__":
-    import time
-
-    start1 = time.time()
-    solution1 = compute_classical(data)
-    end1 = time.time()
-    
-    start2 = time.time()
-    solution2 = compute_quantum(data)
-    end2 = time.time()
-    
-    duration1 = (end1-start1) * 1000
-    duration2 = (end2-start2) * 1000
-    print(f"Solution 1: {solution1} in {duration1:.2f}ms")
-    print(f"Solution 2: {solution2} in {duration2:.2f}ms")
+    print(f"Solution 1: {part1()}")
+    print(f"Solution 2: {part2()}")

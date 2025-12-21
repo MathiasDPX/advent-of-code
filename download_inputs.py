@@ -9,7 +9,7 @@ headers = {
     "Cookie": f"session={SESSION}"
 }
 
-for path in glob(f"{YEAR}/*"):
+for path in glob(f"{YEAR}/[0-2][0-9]"):
     day = path.split("\\")[-1]
     if not day.isdigit():
         continue
