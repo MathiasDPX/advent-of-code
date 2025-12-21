@@ -76,9 +76,6 @@ def part2(mymap):
     return solution
 
 
-lines = open("input.txt", "r").read().splitlines()
-
-
 if __name__ == "__main__":
     from copy import deepcopy
 
