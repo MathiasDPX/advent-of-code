@@ -59,17 +59,29 @@ def displayMap(map):
         print("")
 
 
-solution = 0
-subsolution = None
+def part1(mymap):
+    _, solution = clean_map(mymap)
 
-while subsolution != 0:
-    mymap, subsolution = clean_map(mymap)
-    solution += subsolution
+    return solution
 
-    if subsolution == solution:
-        print(f"Solution part 1: {solution}")
 
-    # print(f"Removed {subsolution} rolls")
-    # displayMap(mymap)
+def part2(mymap):
+    solution = 0
+    subsolution = None
 
-print(f"Solution part 2: {solution}")
+    while subsolution != 0:
+        mymap, subsolution = clean_map(mymap)
+        solution += subsolution
+
+    return solution
+
+
+lines = open("input.txt", "r").read().splitlines()
+
+
+if __name__ == "__main__":
+    from copy import deepcopy
+
+    print(f"Solution part 1: {part1(deepcopy(mymap))}")
+
+    print(f"Solution part 2: {part2(deepcopy(mymap))}")
