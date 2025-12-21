@@ -144,18 +144,15 @@ def part1():
     areas = [shape_cells(s) for s in shapes]
 
     count_fit = 0
-    regions_count = len(regions)
 
-    for i, region in enumerate(regions):
+    for region in regions:
         w, h = region["size"]
         needed = region["shapes"]
         needed = needed[: len(shapes)]
         if search_region(w, h, needed, orientations, areas):
             count_fit += 1
-
-        if i % 50 == 0:
-            print(f"{i}/{regions_count}")
+            
     return count_fit
 
-
-print(part1())
+if __name__ == "__main__":
+    print(f"Solution: {part1()}")

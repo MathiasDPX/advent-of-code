@@ -39,6 +39,6 @@ def part2():
     third = part1("dac", "out")
     return first * second * third
 
-
-print(f"Solution part 1: {part1()}")
-print(f"Solution part 2: {part2()}")
+if __name__ == "__main__":
+    print(f"Solution part 1: {part1()}")
+    print(f"Solution part 2: {part2()}")

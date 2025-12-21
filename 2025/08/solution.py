@@ -56,7 +56,8 @@ def part1():
     # Part 1: multiply together the sizes of the three largest circuits
     dsu.size.sort(reverse=True)
     top3 = dsu.size[:3]
-    print("Solution part 1:", top3[0] * top3[1] * top3[2])
+    
+    return top3[0] * top3[1] * top3[2]
 
 
 def part2():
@@ -75,8 +76,9 @@ def part2():
             if connections == len(points) - 1:
                 break
 
-    print("Solution part 2:", points[last_a][0] * points[last_b][0])
+    return points[last_a][0] * points[last_b][0]
 
 
-part1()
-part2()
+if __name__ == "__main__":
+    print(f"Solution part 1: {part1()}")
+    print(f"Solution part 2: {part2()}")

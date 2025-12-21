@@ -56,16 +56,6 @@ def part2():
     return maxarea
 
 
-def timeit(func):
-    start = time.time()
-    solution = func()
-    end = time.time()
-
-    return (end - start, solution)
-
-
-duration, solution = timeit(part1)
-print(f"Solution part 1: {solution} in {duration * 1000:.2f}ms")
-
-duration, solution = timeit(part2)
-print(f"Solution part 2: {solution} in {duration * 1000:.2f}ms")
+if __name__ == "__main__":
+    print(f"Solution part 1: {part1()}")
+    print(f"Solution part 2: {part2()}")
